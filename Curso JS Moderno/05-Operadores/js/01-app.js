@@ -1,0 +1,10 @@
+//OPERADORES MAYOR Y MENOR QUE
+
+const num1 = 20;
+const num2 = "20";
+const num3 = 30;
+
+console.log(num1 > num3);
+console.log(num3 > num1);
+
+console.log(num1 < num3);
