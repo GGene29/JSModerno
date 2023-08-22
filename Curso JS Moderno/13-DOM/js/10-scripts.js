@@ -11,4 +11,4 @@ const navegacion = document.querySelector('.navegacion');
 navegacion.appendChild('enlace');
 //Posicion y lugares disponibles
 console.log(navegacion.children)
-c
+
