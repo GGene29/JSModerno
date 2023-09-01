@@ -15,7 +15,7 @@ const carrito = [
 let resto;
 
 resto = carrito.filter (objActual => objActual.precio >= 400);
-//Esto es posible gracias a las iteraciones;
+//Esto es posible gracias a las iteraciones; filtrando a lo que necesitamos
 console.log(' ')
 resto = carrito.filter( producto => producto.precio < 500)
 console.log(resto)
