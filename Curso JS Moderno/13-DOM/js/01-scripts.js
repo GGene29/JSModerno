@@ -1,3 +1,38 @@
+/*
+Manipulación del DOM
+Document Object Model (Manipulación del html, xml)
+
+ompuesto principalmente por el document
+el cual contiene elementos (etiquetas)
+y atributos (id, clases, etc)
+
+*/
+
+let elemento;
+//esta es una de las maneras principales para realizar seleccion general del documento
+elemento = document
+console.log(elemento);
+
+//Se seleccionan todas las etiquetas
+// elemento = elemento.all;
+// console.log(elemento);
+
+// seleccion de etiquetas individuales
+//es posible sin el document, porque ya fue pasado en la linea 13
+elemento = elemento.head;
+// elemento = elemento.body;
+
+console.log(elemento);
+
+//Por medio de esto se puede acceder prácticamente a todo, ya sea por la posición, nombre, clase, id, etc.
+
+
+
+
+
+
+/*
+
 console.log(`Pruebas de JavaScript`);
 //Selección de todo lo que consiga referente a div con la clase logo
 let newdiv = document.querySelectorAll('div.logo');
@@ -56,4 +91,4 @@ destino.hidden=true;
 
 
 
-
+*/
