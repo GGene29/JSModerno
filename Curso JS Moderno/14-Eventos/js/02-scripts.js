@@ -29,4 +29,4 @@ logotipo.addEventListener('click', () => {
     console.log('¡Me apretaron!'); //click al elemento
 });
 
-//
+//Aqui nuevo
