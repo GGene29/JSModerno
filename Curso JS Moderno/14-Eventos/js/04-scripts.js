@@ -26,4 +26,4 @@ function validandoImput(event){
     // console.log(event.target);
     //Podemos ver la accion que ejecuta
     console.log(event.target.action);
-}
+};
