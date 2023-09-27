@@ -20,5 +20,5 @@ window.addEventListener('scroll', () => {
     // }else{
     //     console.log('Fuera de la visibilidad')
     // }
-    //new residencia
+    //new residencia, fusionado con cambios
 })
