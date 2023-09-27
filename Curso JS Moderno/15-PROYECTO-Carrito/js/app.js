@@ -30,5 +30,5 @@ function agregarCurso(e) {
             console.log('Agregando al Carrito');
         }
 }
-
+ 
 //residencia
