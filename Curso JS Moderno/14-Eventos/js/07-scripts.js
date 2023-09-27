@@ -20,5 +20,5 @@ cardDiv.addEventListener('click', e => {
     if(e.target.classList.contains('categoria')){
         console.log('CATEGORIA DEL CAR')
     };
-
+//Eventos new
 });
