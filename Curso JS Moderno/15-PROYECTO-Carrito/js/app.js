@@ -119,4 +119,4 @@ function limpiarHTML() {
     };
 }
  
-//residencia
+//empresa
