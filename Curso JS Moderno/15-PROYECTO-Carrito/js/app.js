@@ -25,22 +25,47 @@ cargarEventListeners();
 function cargarEventListeners(){
     //Cuando presionas "Agregar al Carrito" se agrega un curso
     listaCursos.addEventListener('click', agregarCurso);
+
+    //Eliminar un curso del carrito
+    carrito.addEventListener('click', eliminarCurso);
+
+    //Vaciar Carrito
+    vaciarCarritoBtn.addEventListener('click', () => {
+        console.log('Eliminando todo el contenido del carrito');
+        //restaura el carrito a vacío
+        articulosCarritos = []; //restaura el carrito a vacío
+        
+        limpiarHTML(); //Eliminamos todo el html del carrito
+    });
 }
 
-
-
 //Funciones
+//Agrega cursos
 function agregarCurso(e) {
     e.preventDefault();
 
     if (e.target.classList.contains('agregar-carrito')){
-        console.log('Agregando al Carrito');
         const cursoSeleccionado = e.target.parentElement.parentElement
         console.log(e.target.parentElement.parentElement)
         
         leerDatosCurso(cursoSeleccionado);
         
     }
+}
+
+//Eliminar curso del carrito
+function eliminarCurso(e){
+    // console.log(e.target.classList);
+    if(e.target.classList.contains('borrar-curso')){
+        //En un proyecto real sería desde la base de datos la extracción del id
+        const cursoId = e.target.getAttribute('data-id');
+
+        //eliminar del arreglo articulosCarritos por el data-id
+        articulosCarritos = articulosCarritos.filter(curso => curso.id !== cursoId);
+
+        carritoHTML(); //mostramos contenido restante
+    }
+    
 }
 
 //Leer y extraer contenido
@@ -56,12 +81,27 @@ function leerDatosCurso(curso) {
         cantidad: 1,
     }
 
-    //Agregando elementos al arreglo carrito
-    articulosCarritos = [...articulosCarritos, infoCurso];
-    
+    //Revisar si un curso ya existe
+    const existe = articulosCarritos.some(curso => curso.id === infoCurso.id);
+    if (existe) {
+        //Actualizamos cantidad (Mas de uno)
+        const cursos = articulosCarritos.map( curso => {
+            if (curso.id === infoCurso.id){
+                curso.cantidad++;
+                return curso; //Encontrado Atualizado
+            } else{
+                return curso; //El resto
+            }
+        });
+        articulosCarritos = [...cursos];
+    }else{
+        //Agregando elementos al arreglo carrito
+        articulosCarritos = [...articulosCarritos, infoCurso];
+
+    }
+
     console.log(infoCurso);
     console.log(articulosCarritos);
-
     carritoHTML();
 }
 
@@ -75,7 +115,7 @@ function carritoHTML() {
     //Recorre el carrito y genera el HTML
     articulosCarritos.forEach( curso => {
         const {imagen, titulo, precio, cantidad ,id} = curso
-        const row = document.createElement('tr');
+        const row = document.createElement('tr'); //estructura del carrito
         row.innerHTML = `
             <td>
                 <img src="${imagen}" width="100">
@@ -98,14 +138,8 @@ function carritoHTML() {
 
         //html del carrito en el tbody
         contenedorCarrito.appendChild(row);
-        // //Vaciar Carrito
-        // vaciarCarritoBtn.addEventListener('click', () => {
-        //     console.log('Eliminando todo el contenido del carrito');
-        //     articulosCarritos.remove();
-        // });
+        
     });
-    
-
 }
 
 //Elimina cursos de tbody (carrito)
