@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     inputEmail.addEventListener('input', (e) => {
         console.log(e.target.value)
     })
+    
     inputEmail.addEventListener('blur', () => {
         console.log("aqui me encuentro")
         
