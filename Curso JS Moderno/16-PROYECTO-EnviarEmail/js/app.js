@@ -55,4 +55,5 @@ document.addEventListener('DOMContentLoaded', function(){
     };
 
     //blur, input, cut, copy, keydown, keyup, paste  
+    //con todos los cambios
 })
