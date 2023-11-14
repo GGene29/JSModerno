@@ -54,5 +54,6 @@ document.addEventListener('DOMContentLoaded', function(){
         formulario.appendChild(error);
     };
 
-    //blur, input, cut, copy, keydown, keyup, paste 
+    //blur, input, cut, copy, keydown, keyup, paste  
+    //con todos los cambios
 })
