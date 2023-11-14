@@ -35,25 +35,24 @@ document.addEventListener('DOMContentLoaded', function(){
         // vacioInput = e.target.value;
         //trim es un metodo de string, para eliminar espacios en blanco
         if (e.target.value.trim() === ''){
-            mostrarAlerta('El campo es obligatorio');
+            console.log('campo obligatorio');
+            console.log(e.target.id);
+            mostrarAlerta(`El campo ${e.target.id} es obligatorio`);
         } else{
             console.log(e.target.value);
         }
     };
     
     function mostrarAlerta(mensaje){
+        //creacion de Html
         const error = document.createElement('P');
-        error.className = 'validacion-error';
+        //Asignacion del mensaje
         error.textContent = mensaje;
+        //Agregar clases
         error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center')
-        
-        console.log(error);
-
-        formulario.appendChild(error)
+        //Añade a html la notificacion del campo
+        formulario.appendChild(error);
     };
-
-
- 
 
     //blur, input, cut, copy, keydown, keyup, paste 
 })
