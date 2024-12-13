@@ -1,0 +1,22 @@
+{
+  "name": "agenciaviajes",
+  "version": "1.0.0",
+  "description": "primer proyecto node js",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "type": "module",
+  "author": "genesis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
